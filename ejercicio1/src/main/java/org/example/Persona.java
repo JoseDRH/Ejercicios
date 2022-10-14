@@ -22,7 +22,7 @@ public class Persona {
     public Persona(String linea) throws InvalidFormatLineException{
         //Se crea un array con los 3 datos con la funcion split y el String recibido
         try {
-            String[] datos= linea.split(",");
+            String[] datos= linea.split(":");
             if(!datos[0].equals("")) {
                 this.nombre=datos[0];
                 if(datos[1].isEmpty()) this.ciudad=Optional.ofNullable(null);
