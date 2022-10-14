@@ -14,7 +14,7 @@ public class Main {
 
         Persona.extraerDatos(ruta);
         Persona.filtrar(p->p.getEdad()<25 && p.getEdad()>0);
-        //Aparatado a)
+        //Apartado a)
         System.out.println("<\n\nApartado A:");
         for (Persona p:
                 Persona.personas ) {
@@ -25,7 +25,7 @@ public class Main {
         //Apartado d)
         System.out.println("\n\nApartado D: \n"+Persona.primeraCiudad("Madrid"));
 
-        //Aparatado B
+        //Apartado B
         System.out.println("<\n\nApartado B:");
         Persona.extraerDatos(ruta);
         Persona.filtrar(p->p.getNombre().charAt(0)!='A');
