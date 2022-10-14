@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class Persona {
@@ -21,17 +22,17 @@ public class Persona {
     public Persona(String linea) throws InvalidFormatLineException{
         //Se crea un array con los 3 datos con la funcion split y el String recibido
         try {
-        String[] datos= linea.split(",");
-        if(!datos[0].equals("")) {
-            this.nombre=datos[0];
-            if(datos[1].isEmpty()) this.ciudad=Optional.ofNullable(null);
-            else this.ciudad=Optional.ofNullable(datos[1]);
-            if(datos[2]==null) this.edad=0;
-            else  this.edad=Integer.parseInt(datos[2]);
-        }
-        else {
-            throw  new InvalidFormatLineException("Debe introducir un valor en el campo de nombre obligatoriamente \n Error en la linea "+(personas.size()+1));
-        }
+            String[] datos= linea.split(",");
+            if(!datos[0].equals("")) {
+                this.nombre=datos[0];
+                if(datos[1].isEmpty()) this.ciudad=Optional.ofNullable(null);
+                else this.ciudad=Optional.ofNullable(datos[1]);
+                if(datos[2]==null) this.edad=0;
+                else  this.edad=Integer.parseInt(datos[2]);
+            }
+            else {
+                throw  new InvalidFormatLineException("Debe introducir un valor en el campo de nombre obligatoriamente \n Error en la linea "+(personas.size()+1));
+            }
 
 
         }
@@ -42,7 +43,7 @@ public class Persona {
         catch (NumberFormatException e){this.edad=0; System.err.println("La edad debe ser determinada por una valor numerico");
             //Ya que este error solo se producira en la creacion de la lista inicial podemos determinar
             //La posicion de la linea con el error por el tamaño de la lista
-        System.err.println("Error en la linea "+(personas.size()+1)+" del archivo");}
+            System.err.println("Error en la linea "+(personas.size()+1)+" del archivo");}
 
     }
     static void extraerDatos(Path ruta){
@@ -61,7 +62,7 @@ public class Persona {
                 }
             }
 
-        } catch (IOException e) {throw new RuntimeException(e);}
+        } catch (IOException e) {}
     }
     static Persona primeraCiudad(String filtro){
         Stream<Persona> flujo=personas.stream();
@@ -70,47 +71,13 @@ public class Persona {
 
 
     }
-
-    static void mayorQue(int filtro){
+    static void filtrar(Predicate<Persona> filtro){
         Stream<Persona> flujo= personas.stream();
-        List<Persona> filtrado= new ArrayList<>();
-
-        flujo.filter(p ->p.getEdad()>=filtro)
-                .forEach(p ->filtrado.add(p));
+        List<Persona> filtrado=new ArrayList<>();
+        flujo.filter(filtro).forEach(p->filtrado.add(p));
         personas=filtrado;
 
-    }
-    static void menorQue(int filtro){
-        Stream<Persona> flujo= personas.stream();
-        List<Persona> filtrado= new ArrayList<>();
 
-        flujo.filter(p ->p.getEdad()<=filtro && p.getEdad()>0)
-                .forEach(p ->filtrado.add(p));
-        personas=filtrado;
-    }
-    static void porNombre(String filtro){
-        Stream<Persona> flujo= personas.stream();
-        List<Persona> filtrado= new ArrayList<>();
-
-        flujo.filter(p ->p.getNombre().equals(filtro))
-                .forEach(p ->filtrado.add(p));
-        personas=filtrado;
-    }
-    static void porInicial(char filtro){
-        Stream<Persona> flujo= personas.stream();
-        List<Persona> filtrado= new ArrayList<>();
-
-        flujo.filter(p ->p.getNombre().charAt(0)==(filtro))
-                .forEach(p ->filtrado.add(p));
-        personas=filtrado;
-    }
-    static void eliminarPorInicial(char filtro){
-        Stream<Persona> flujo= personas.stream();
-        List<Persona> filtrado= new ArrayList<>();
-
-        flujo.filter(p ->p.getNombre().charAt(0)!=(filtro))
-                .forEach(p ->filtrado.add(p));
-        personas=filtrado;
     }
 
 

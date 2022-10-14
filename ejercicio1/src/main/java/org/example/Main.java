@@ -13,11 +13,11 @@ public class Main {
         Path ruta= Paths.get("src/main/Archivos CSV/personas.csv");
 
         Persona.extraerDatos(ruta);
-        Persona.menorQue(25);
+        Persona.filtrar(p->p.getEdad()<25 && p.getEdad()>0);
         //Aparatado a)
         System.out.println("<\n\nApartado A:");
         for (Persona p:
-            Persona.personas ) {
+                Persona.personas ) {
             System.out.println(p);
         }
         //Apartado c)
@@ -28,7 +28,7 @@ public class Main {
         //Aparatado B
         System.out.println("<\n\nApartado B:");
         Persona.extraerDatos(ruta);
-        Persona.eliminarPorInicial('A');
+        Persona.filtrar(p->p.getNombre().charAt(0)!='A');
         for (Persona p :
                 Persona.personas) {
             System.out.println(p);
