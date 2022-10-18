@@ -15,7 +15,7 @@ public class Persona {
 
     static List<Persona> personas= new ArrayList<>();
     private String nombre;
-    private Optional<String> ciudad ;
+    private String ciudad ;
     private int edad;
 
     //Constructor que recibe los datos en un unico String
@@ -25,10 +25,11 @@ public class Persona {
             String[] datos= linea.split(":");
             if(!datos[0].equals("")) {
                 this.nombre=datos[0];
-                if(datos[1].isEmpty()) this.ciudad=Optional.ofNullable(null);
-                else this.ciudad=Optional.ofNullable(datos[1]);
-                if(datos[2]==null) this.edad=0;
-                else  this.edad=Integer.parseInt(datos[2]);
+                if (datos[1].isEmpty())datos[1]=null;
+                Optional<String> optionalCiudad= Optional.ofNullable(datos[1]);
+                this.ciudad= optionalCiudad.orElse("unknow");
+                Optional<Integer> optionalEdad=Optional.ofNullable(Integer.parseInt(datos[2]));
+                this.edad=optionalEdad.orElse(0);
             }
             else {
                 throw  new InvalidFormatLineException("Debe introducir un valor en el campo de nombre obligatoriamente \n Error en la linea "+(personas.size()+1));
@@ -38,7 +39,9 @@ public class Persona {
         }
         //Ya que la edad es el ultimo campo, en ocacsiones esta vacio y no se incluira en el array
         //Por lo que dara un error de IndexOutofBOunds por lo que se crea un control de errores para asginar un valor de 0 en estos casos
-        catch (ArrayIndexOutOfBoundsException e){this.edad=0;}
+        catch (ArrayIndexOutOfBoundsException e){this.edad=0;
+            System.err.println("Debe insertar el campo de edad");
+            System.err.println("Error en la linea "+(personas.size()+1)+" del archivo");}
         // En este control comprobamos si se a insertado un valor no numerico para avisar del error y cambiarlo a 0
         catch (NumberFormatException e){this.edad=0; System.err.println("La edad debe ser determinada por una valor numerico");
             //Ya que este error solo se producira en la creacion de la lista inicial podemos determinar
@@ -62,7 +65,7 @@ public class Persona {
                 }
             }
 
-        } catch (IOException e) {}
+        } catch (IOException e) {e.printStackTrace();}
     }
     static Persona primeraCiudad(String filtro){
         Stream<Persona> flujo=personas.stream();
@@ -84,7 +87,7 @@ public class Persona {
     @Override
     public String toString() {
         return "Name:" + nombre +
-                ". Town:" + ciudad.orElse("unknow") +
+                ". Town:" + ciudad +
                 ". Age:" + edad  ;
     }
 
@@ -97,6 +100,6 @@ public class Persona {
     }
 
     public String getCiudad() {
-        return ciudad.orElse("unknow");
+        return ciudad;
     }
 }
