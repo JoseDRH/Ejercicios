@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da986408-db4c-480d-bc4f-c9745d8d7194" name="Changes" comment="upload ejercicio1 ,idea">
+    <list default="true" id="da986408-db4c-480d-bc4f-c9745d8d7194" name="Changes" comment="commit refactor ejercicios">
+      <change afterPath="$PROJECT_DIR$/block3-create-repo-git/src/main/ArchivosTXT/fichero1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/block3-create-repo-git/src/main/ArchivosTXT/fichero2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666089465032</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="commit refactor ejercicios">
+      <created>1666104876057</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666104876057</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -175,6 +184,7 @@
     <MESSAGE value="eliminacion ejercicio1 para" />
     <MESSAGE value="resubir ejercicio1" />
     <MESSAGE value="upload ejercicio1 ,idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload ejercicio1 ,idea" />
+    <MESSAGE value="commit refactor ejercicios" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit refactor ejercicios" />
   </component>
 </project>
