@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="da986408-db4c-480d-bc4f-c9745d8d7194" name="Changes" comment="commit refactor ejercicios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/block1-process-file-and-streams/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/block1-process-file-and-streams/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/block3-maven-package/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/block3-maven-package/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/block5-command-line-runner/.idea/block5-command-line-runner.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/block5-command-line-runner/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/block5-command-line-runner/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/block5-command-line-runner/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/block5-command-line-runner/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/block5-command-line-runner/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/block5-command-line-runner/target/classes/com/example/block5commandlinerunner/Block5CommandLineRunnerApplication.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/jose.delrio/Desktop/WorkSpace/Ejercicios/block1-process-file-and-streams",
+    "last_opened_file_path": "C:/Users/jose.delrio/Desktop/block5-command-line",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
