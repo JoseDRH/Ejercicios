@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da986408-db4c-480d-bc4f-c9745d8d7194" name="Changes" comment="commit refactor ejercicios">
-      <change afterPath="$PROJECT_DIR$/block3-create-repo-git/src/main/ArchivosTXT/fichero1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/block3-create-repo-git/src/main/ArchivosTXT/fichero2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/block1-process-file-and-streams/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/block1-process-file-and-streams/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/block3-maven-package/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/block3-maven-package/.idea/compiler.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,13 +22,18 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/Ejercicios" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2G5UUFSixTyLwn3NkXyXiya7rqj" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -43,8 +48,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/jose.delrio/Desktop/WorkSpace/Ejercicios",
-    "project.structure.last.edited": "Modules",
+    "last_opened_file_path": "C:/Users/jose.delrio/Desktop/WorkSpace/Ejercicios/block1-process-file-and-streams",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "configurable.group.build"
@@ -159,7 +164,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666104876057</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="innit commit">
+      <created>1666174008503</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666174008503</updated>
+    </task>
+    <task id="LOCAL-00012" summary="innit commit">
+      <created>1666174042882</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1666174042882</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
