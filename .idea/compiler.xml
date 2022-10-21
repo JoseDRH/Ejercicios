@@ -10,6 +10,7 @@
         <module name="ejercicio1" />
         <module name="ejercicio2" />
         <module name="maven" />
+        <module name="block5-profiles" />
         <module name="block5-command-line" />
         <module name="block5-properties" />
         <module name="block5-loggin" />
