@@ -4,7 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import javax.annotation.PostConstruct;
 
@@ -23,7 +23,7 @@ public class Block5CommandLineApplication implements CommandLineRunner {
 		return p-> System.out.println("Hola desde clase secundaria");
 	}
 	@Bean
-	CommandLineRunner hola3(@RequestParam String[] args){
+	CommandLineRunner hola3(String[] args){
 		return p->{
 			for (String a:
 				 args) {
@@ -35,5 +35,6 @@ public class Block5CommandLineApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
+			hola3(args);
 	}
 }
