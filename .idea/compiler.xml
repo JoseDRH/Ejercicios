@@ -27,6 +27,7 @@
       <module name="block5-loggin" options="-parameters" />
       <module name="block5-profiles" options="-parameters" />
       <module name="block5-properties" options="-parameters" />
+      <module name="block6-simple-controllers" options="-parameters" />
     </option>
   </component>
 </project>
