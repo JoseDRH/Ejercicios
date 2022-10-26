@@ -14,7 +14,9 @@
         <module name="block5-command-line" />
         <module name="block5-properties" />
         <module name="block6-simple-controllers" />
+        <module name="block6-person-controllers" />
         <module name="block5-loggin" />
+        <module name="block6-path-variable-headers" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
