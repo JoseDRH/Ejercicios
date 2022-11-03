@@ -25,7 +25,14 @@ public class Filtro implements Filter {
         HttpServletResponse response= (HttpServletResponse) servletResponse;
         ContentCachingRequestWrapper content= new ContentCachingRequestWrapper(request);
         Enumeration<String> headers= request.getHeaderNames();
+        //Creamos una lista donde almacenaremos el body por lineas
+        List<String> mensaje=new ArrayList<>();
         if (headers!=null){
+            if (request.getMethod().equals("POST")){
+                //Extraemos el body y lo introducimos en la lista
+                Stream<String> flujo=  content.getReader().lines();
+                flujo.forEach(linea->mensaje.add(linea));
+            }
             while (headers.hasMoreElements()){
                 String headerName=headers.nextElement();
                 if (headerName.equalsIgnoreCase("redirige") && request.getHeader(headerName).equalsIgnoreCase("salta") ){
@@ -36,23 +43,14 @@ public class Filtro implements Filter {
                             return "/salta";
                         }
                     };
-                } else if (request.getMethod().equals("POST")) {
-                    List<String> mensaje=new ArrayList<>();
-
-                    Stream<String> flujo=  content.getReader().lines();
-
-                    flujo.forEach(linea->mensaje.add(linea));
-
-                    if (headerName.equalsIgnoreCase("add")) {
-                      mensaje.add("Modificado");
-                     }
-                    System.out.println(flujo);
-                    request.setAttribute("mensaje",mensaje);
-                    break;
-
+                    //Si existe un header llamado add añadira el string "modificado" al List del mensaje
+                } else if (headerName.equalsIgnoreCase("add")) {
+                    mensaje.add("Modificado");
                 }
             }
         }
+        //Para enviar el contenido del body a los controladores lo añadimos como un atributo
+        request.setAttribute("mensaje",mensaje);
         filterChain.doFilter(request,response);
     }
 }
