@@ -1,14 +1,12 @@
 package com.example.EjercicoPractica.Controller;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -34,22 +32,35 @@ public class Controller {
     @GetMapping("/**")
     public String entryOther(@RequestParam Map<String,String> allParams, @RequestHeader Map<String,String> allheader,
                              HttpServletRequest request, HttpServletResponse response) throws IOException {
-        if(request.getHeader("REDIRIGE")!=null && request.getHeader("REDIRIGE").equals("SALTA")) {
+    /*    if(request.getHeader("REDIRIGE")!=null && request.getHeader("REDIRIGE").equals("SALTA")) {
             response.sendRedirect("/salta");
-        }
+        }*/
 
-        return "Funcion entryOther \n"+constructor(allParams,allheader,request).toString()+request.getHeader("REDIRIGE");
+        return "Funcion entryOther \n"+constructor(allParams,allheader,request).toString();
     }
     @GetMapping(value ={ "/","one"})
     public String entryOne(@RequestParam Map<String,String> allParams, @RequestHeader Map<String,String> allheader,
                            HttpServletRequest request,HttpServletResponse response) throws IOException {
-        if(request.getHeader("REDIRIGE")!=null && request.getHeader("REDIRIGE").equals("SALTA")) {
+   /*     if(request.getHeader("REDIRIGE")!=null && request.getHeader("REDIRIGE").equals("SALTA")) {
             response.sendRedirect("/salta");
-        }
+        }*/
         return "Funcion entryOne \n"+constructor(allParams,allheader,request).toString();
     }
     @GetMapping("/salta")
     public String entryJump(){
         return "He ido a jump";
+    }
+
+    @PostMapping("/**")
+    public String output(HttpServletRequest request){
+        List<String> mensaje=new ArrayList<>();
+        String body="";
+        mensaje= (List<String>) request.getAttribute("mensaje");
+        for (String linea:
+            mensaje ) {
+            body+=linea+"\n";
+        }
+
+        return body;
     }
 }
