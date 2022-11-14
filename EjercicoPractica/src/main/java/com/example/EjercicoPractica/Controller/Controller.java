@@ -29,7 +29,7 @@ public class Controller {
         return controllerObject;
     }
 
-    @GetMapping("/**")
+    @GetMapping("**")
     public String entryOther(@RequestParam Map<String,String> allParams, @RequestHeader Map<String,String> allheader,
                              HttpServletRequest request, HttpServletResponse response) throws IOException {
     /*    if(request.getHeader("REDIRIGE")!=null && request.getHeader("REDIRIGE").equals("SALTA")) {
