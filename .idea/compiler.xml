@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="block7-crud-validation" />
         <module name="maven" />
         <module name="block7-crud" />
         <module name="block5-profiles" />
@@ -15,6 +16,7 @@
         <module name="ejercicio4" />
         <module name="ejercicio1" />
         <module name="ejercicio2" />
+        <module name="Block7CrudvalidadtionPart4" />
         <module name="block5-properties" />
         <module name="block6-simple-controllers" />
         <module name="block6-person-controllers" />
@@ -29,6 +31,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="EjercicoPractica" options="-parameters" />
+      <module name="ExamenJPACascada" options="-parameters" />
       <module name="block5-command-line" options="-parameters" />
       <module name="block5-loggin" options="-parameters" />
       <module name="block5-profiles" options="-parameters" />
