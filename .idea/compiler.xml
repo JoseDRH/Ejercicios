@@ -16,6 +16,7 @@
         <module name="ejercicio4" />
         <module name="ejercicio1" />
         <module name="ejercicio2" />
+        <module name="block10docker" />
         <module name="Block7CrudvalidadtionPart4" />
         <module name="block5-properties" />
         <module name="block6-simple-controllers" />
@@ -30,6 +31,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Block7CrudvalidadtionPart4" options="-parameters" />
       <module name="EjercicoPractica" options="-parameters" />
       <module name="ExamenJPACascada" options="-parameters" />
       <module name="block5-command-line" options="-parameters" />
@@ -40,6 +42,7 @@
       <module name="block6-person-controllers" options="-parameters" />
       <module name="block6-simple-controllers" options="-parameters" />
       <module name="block7-crud" options="-parameters" />
+      <module name="block7-crud-validation" options="-parameters" />
     </option>
   </component>
 </project>

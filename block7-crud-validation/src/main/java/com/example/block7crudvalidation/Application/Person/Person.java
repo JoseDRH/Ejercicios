@@ -1,11 +1,13 @@
 package com.example.block7crudvalidation.Application.Person;
 
 import com.example.block7crudvalidation.Application.Exceptions.UnprocessableEntityException;
+import com.example.block7crudvalidation.Application.Generador;
 import com.example.block7crudvalidation.Application.Person.Model.PersonDTO;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,7 +21,16 @@ import java.util.Date;
 public class Person implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+  /*  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "persona_seq" )
+    @GenericGenerator(
+            name = "persona_seq",
+            strategy = "com.example.block7crudvalidation.Application.Generador",
+            parameters = {
+                    @Parameter(name = Generador.INCREMENT_PARAM, value="1"),
+                    @Parameter(name= Generador.VALUE_PREFIX_PARAMETER, value="Persona_")
+            }
+    )*/
     private Integer id_persona;         //[PK, AUTO-INCREMENTAL
     @Column
     @NotNull
