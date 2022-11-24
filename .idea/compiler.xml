@@ -11,6 +11,7 @@
         <module name="block7-crud" />
         <module name="block5-profiles" />
         <module name="block5-command-line" />
+        <module name="block11-cors" />
         <module name="EjercicoPractica" />
         <module name="ExamenJPACascada" />
         <module name="ejercicio4" />
@@ -34,6 +35,8 @@
       <module name="Block7CrudvalidadtionPart4" options="-parameters" />
       <module name="EjercicoPractica" options="-parameters" />
       <module name="ExamenJPACascada" options="-parameters" />
+      <module name="block10docker" options="-parameters" />
+      <module name="block11-cors" options="-parameters" />
       <module name="block5-command-line" options="-parameters" />
       <module name="block5-loggin" options="-parameters" />
       <module name="block5-profiles" options="-parameters" />
