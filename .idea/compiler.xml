@@ -24,6 +24,7 @@
         <module name="block6-person-controllers" />
         <module name="block5-loggin" />
         <module name="block6-path-variable-headers" />
+        <module name="block11-upload-download-files" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
