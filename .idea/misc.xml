@@ -23,6 +23,8 @@
         <option value="$PROJECT_DIR$/block10docker/pom.xml" />
         <option value="$PROJECT_DIR$/block11-cors/pom.xml" />
         <option value="$PROJECT_DIR$/block11-upload-download-files/pom.xml" />
+        <option value="$PROJECT_DIR$/block12-kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/block12-kafka-2/pom.xml" />
       </list>
     </option>
   </component>
