@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="block7-crud-validation" />
+        <module name="block7-crud-validation (1)" />
         <module name="maven" />
         <module name="block7-crud" />
         <module name="block5-profiles" />
@@ -41,6 +42,8 @@
       <module name="block10docker" options="-parameters" />
       <module name="block11-cors" options="-parameters" />
       <module name="block11-upload-download-files" options="-parameters" />
+      <module name="block12-kafka" options="-parameters" />
+      <module name="block12-kafka-2" options="-parameters" />
       <module name="block5-command-line" options="-parameters" />
       <module name="block5-loggin" options="-parameters" />
       <module name="block5-profiles" options="-parameters" />
@@ -50,6 +53,7 @@
       <module name="block6-simple-controllers" options="-parameters" />
       <module name="block7-crud" options="-parameters" />
       <module name="block7-crud-validation" options="-parameters" />
+      <module name="block7-crud-validation (1)" options="-parameters" />
     </option>
   </component>
 </project>
