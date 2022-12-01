@@ -12,6 +12,7 @@
         <module name="block7-crud" />
         <module name="block5-profiles" />
         <module name="block5-command-line" />
+        <module name="block13-mongodb" />
         <module name="block11-cors" />
         <module name="EjercicoPractica" />
         <module name="ExamenJPACascada" />
