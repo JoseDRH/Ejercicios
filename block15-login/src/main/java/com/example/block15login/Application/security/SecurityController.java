@@ -57,7 +57,7 @@ public class SecurityController {
                 .claim("roles",
                         grantedAuthorities.stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 600000))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000000))
                 .signWith(SignatureAlgorithm.HS512, "secret".getBytes()).compact();
         return "Bearer " + token;
     }

@@ -155,9 +155,9 @@ public class ControllersPerson {
         public PersonDTO add(@RequestBody Person person) throws UnprocessableEntityException {
 
               person.validacionJava();
-              servicePerson.savePerson(person);
+             return  servicePerson.savePerson(person).setToDTO();
 
-              return person.setToDTO();
+
 
         }
         @PutMapping(path="/updatePerson")

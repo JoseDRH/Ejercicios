@@ -1,0 +1,48 @@
+version: "3.2"
+services:
+  eurekaContainer:
+    networks:
+      - mynetwork
+    image: eureka:latest
+    ports:
+      - "8761:8761"
+  backendContainer:
+    networks:
+      - mynetwork
+    image: backend:latest
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eurekaContainer
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE = http://eurekaContainer:8761/eureka/
+  frontContainer:
+    networks:
+      - mynetwork
+    image: backend-front:latest
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eurekaContainer
+    environment:
+      - FEIGNHOST =backendContainer
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE = http://eurekaContainer:8761/eureka/
+  gatewayContainer:
+      networks:
+        - mynetwork
+      image: api-gateway:latest
+      ports:
+        - "8080:8080"
+      depends_on:
+        - backendContainer
+        - frontContainer
+      environment:
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE = http://eurekaContainer:8761/eureka/
+        - SPRING_CLOUD_GATEWAY_ROUTES[0]_ID= Backend
+        - SPRING_CLOUD_GATEWAY_ROUTES[0]_URI= http://frontContainer:8082/
+        - SPRING_CLOUD_GATEWAY_ROUTES[0]_PREDICATES[0]=Path= /generateTicket/**
+        - SPRING_CLOUD_GATEWAY_ROUTES[1]_ID= Backend-Front
+        - SPRING_CLOUD_GATEWAY_ROUTES[1]_URI= http://backendContainer:8081/
+        - SPRING_CLOUD_GATEWAY_ROUTES[1]_PREDICATES[0]=Path= /**
+networks:
+  mynetwork:

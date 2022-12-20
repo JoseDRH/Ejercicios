@@ -5,9 +5,7 @@ import com.example.block14testing.Application.Exceptions.UnprocessableEntityExce
 import com.example.block14testing.Application.Person.Controller.ControllersPerson;
 import com.example.block14testing.Application.Person.Crud.ServicePerson;
 import com.example.block14testing.Application.Person.Person;
-import com.example.block14testing.Application.Profesor.Crud.RepositoryProfesor;
 import com.example.block14testing.Application.Profesor.Crud.ServiceProfesor;
-import com.example.block14testing.Application.Student.Crud.RepositoryStudent;
 import com.example.block14testing.Application.Student.Crud.ServiceStudent;
 import org.junit.jupiter.api.*;
 import org.mockito.InjectMocks;
@@ -20,6 +18,7 @@ import java.util.Date;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -62,7 +61,8 @@ public class PersonControllerTest {
     @Order(1)
     void saveTest() throws UnprocessableEntityException {
         when(service.savePerson(any(Person.class))).thenReturn(pe);
-        assertNotNull(controllers.add(pe));
+        assertTrue(controllers.add(pe).getName().equals("Jose"));
+
     }
     @Test
     @Order(2)
